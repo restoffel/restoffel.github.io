@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback | restoffel</title>
+    
+    <!-- Standard Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Seiten-spezifische Styles -->
+    <style>
+        main {
+            padding: 30px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 4px solid #4da6ff;
+        }
+        
+        .section h2 {
+            color: #4da6ff;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+        
+        .section h3 {
+            color: #fff;
+            margin: 25px 0 15px 0;
+            font-size: 1.2em;
+        }
+        
+        .section p {
+            line-height: 1.8;
+            color: #ddd;
+            margin: 0 0 15px 0;
+        }
+        
+        .section ul {
+            margin-left: 20px;
+            padding-left: 20px;
+        }
+        
+        .section li {
+            line-height: 1.8;
+            color: #ddd;
+            margin-bottom: 8px;
+        }
+        
+        .section a {
+            color: #4da6ff;
+            text-decoration: none;
+        }
+        
+        .section a:hover {
+            text-decoration: underline;
+        }
+        
+        .highlight {
+            background-color: rgba(77, 166, 255, 0.2);
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        
+        .option-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(77, 166, 255, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .option-card:hover {
+            border-color: #4da6ff;
+            transform: translateX(5px);
+        }
+        
+        .option-card h3 {
+            color: #4da6ff;
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+        
+        .option-card .icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .option-card .pro {
+            color: #4CAF50;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .option-card .con {
+            color: #f44336;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #1a1a2e;
+            color: #4da6ff;
+            text-decoration: none;
+            border-radius: 8px;
+            border: 1px solid #4da6ff;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+        
+        .btn:hover {
+            background-color: #4da6ff;
+            color: #000;
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary {
+            background-color: #4da6ff;
+            color: #000;
+        }
+        
+        .btn-primary:hover {
+            background-color: #6db8ff;
+        }
+        
+        .email-info {
+            background-color: rgba(77, 166, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 3px solid #4da6ff;
+        }
+        
+        .email-info code {
+            background-color: #1a1a2e;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #4da6ff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Menü öffnen">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Sidebar Navigation -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h2>restoffel</h2>
+        </div>
+        <ul id="sidebar-nav"></ul>
+    </nav>
+    
+    <!-- Overlay für Mobile -->
+    <div id="overlay"></div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>💬 Feedback</h1>
+            <p class="subtitle">Wir freuen uns über dein Feedback, Vorschläge und Fragen</p>
+            <a href="index.html" class="back-link">↩ Zurück zur Startseite</a>
+        </header>
+        
+        <main>
+            <div class="section">
+                <h2>Wie du Feedback geben kannst</h2>
+                <p>
+                    Du möchtest uns Feedback geben, einen Fehler melden oder eine Frage stellen? 
+                    Hier findest du verschiedene Möglichkeiten – <strong>mit und ohne GitHub-Account</strong>.
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2>📝 Optionen für Feedback</h2>
+                
+                <!-- Option 1: GitHub Issues -->
+                <div class="option-card">
+                    <div class="icon">💻</div>
+                    <h3>GitHub Issues <span class="pro">✓ Mit Account</span></h3>
+                    <p>
+                        <strong>Beste Option für technische Feedback:</strong> Erstelle ein Issue im GitHub-Repository. 
+                        Das ist die schnellste Methode, um mit uns in Kontakt zu treten.
+                    </p>
+                    <p>
+                        <strong>Vorteile:</strong>
+                    </p>
+                    <ul>
+                        <li>Direkte Benachrichtigung an uns</li>
+                        <li>Öffentliche Diskussion möglich</li>
+                        <li>Dateianhänge möglich (Screenshots etc.)</li>
+                        <li>Verlauf und Status sind sichtbar</li>
+                    </ul>
+                    <p>
+                        <strong>Nachteile:</strong>
+                    </p>
+                    <ul>
+                        <li class="con">GitHub-Account erforderlich</li>
+                    </ul>
+                    <a href="https://github.com/restoffel/restoffel.github.io/issues/new" class="btn btn-primary" target="_blank">
+                        Issue erstellen
+                    </a>
+                </div>
+                
+                <!-- Option 2: E-Mail -->
+                <div class="option-card">
+                    <div class="icon">✉️</div>
+                    <h3>E-Mail <span class="pro">✓ Ohne Account</span></h3>
+                    <p>
+                        <strong>Einfache und direkte Methode:</strong> Schreibe uns eine E-Mail mit deinem Feedback.
+                    </p>
+                    <p>
+                        <strong>Vorteile:</strong>
+                    </p>
+                    <ul>
+                        <li>Kein Account nötig</li>
+                        <li>Privat und direkt</li>
+                        <li>Dateianhänge möglich</li>
+                    </ul>
+                    <p>
+                        <strong>Nachteile:</strong>
+                    </p>
+                    <ul>
+                        <li class="con">Keine öffentliche Diskussion</li>
+                        <li class="con">Kein Status-Tracking</li>
+                    </ul>
+                    <div class="email-info">
+                        <p>
+                            <strong>E-Mail-Adresse:</strong><br>
+                            <code>feedback [at] restoffel [dot] github [dot] io</code>
+                        </p>
+                        <p style="font-size: 0.9em; margin-top: 10px;">
+                            <em>Hinweis: Ersetze [at] mit @ und [dot] mit .</em>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Option 3: Statische Feedback-Form (Formspree) -->
+                <div class="option-card">
+                    <div class="icon">📋</div>
+                    <h3>Feedback-Formular <span class="pro">✓ Ohne Account</span></h3>
+                    <p>
+                        <strong>Einfaches Formular direkt auf dieser Seite:</strong> Fülle das Formular aus und sende es ab. 
+                        Kein Account nötig!
+                    </p>
+                    <p>
+                        <strong>Vorteile:</strong>
+                    </p>
+                    <ul>
+                        <li>Kein Account nötig</li>
+                        <li>Einfach und schnell</li>
+                        <li>Keine E-Mail-Adresse erforderlich</li>
+                    </ul>
+                    <p>
+                        <strong>Nachteile:</strong>
+                    </p>
+                    <ul>
+                        <li class="con">Keine Dateianhänge möglich</li>
+                        <li class="con">Kein Status-Tracking</li>
+                    </ul>
+                    <a href="#feedback-form" class="btn">Zum Formular</a>
+                </div>
+                
+                <!-- Option 4: Soziale Medien -->
+                <div class="option-card">
+                    <div class="icon">📱</div>
+                    <h3>Soziale Medien <span class="pro">✓ Optional</span></h3>
+                    <p>
+                        <strong>Falls verfügbar:</strong> Du kannst uns auch über soziale Medien kontaktieren.
+                    </p>
+                    <p>
+                        <strong>Vorteile:</strong>
+                    </p>
+                    <ul>
+                        <li>Schnelle Interaktion</li>
+                        <li>Öffentliche Diskussion möglich</li>
+                    </ul>
+                    <p>
+                        <strong>Nachteile:</strong>
+                    </p>
+                    <ul>
+                        <li class="con">Account beim jeweiligen Dienst erforderlich</li>
+                        <li class="con">Nicht immer zuverlässig</li>
+                    </ul>
+                    <p style="color: #888; font-style: italic;">
+                        Aktuell nicht verfügbar – wir arbeiten daran!
+                    </p>
+                </div>
+            </div>
+            
+            <div class="section" id="feedback-form">
+                <h2>📝 Feedback-Formular</h2>
+                <p>
+                    Fülle dieses Formular aus, um uns direkt Feedback zu geben. 
+                    <strong>Kein Account nötig!</strong>
+                </p>
+                
+                <div class="email-info">
+                    <p>
+                        <strong>Hinweis:</strong> Dieses Formular nutzt einen externen Dienst (<strong>Formspree</strong>), 
+                        um die Daten ohne eigenen Server zu verarbeiten. 
+                        Bitte lies die <a href="https://formspree.io/legal" target="_blank" style="color: #4da6ff;">Datenschutzbestimmungen von Formspree</a>.
+                    </p>
+                </div>
+                
+                <!-- Formular mit Formspree -->
+                <form action="https://formspree.io/f/mqkvqvgo" method="POST" style="margin-top: 20px;">
+                    <div style="margin-bottom: 20px;">
+                        <label for="name" style="display: block; margin-bottom: 5px; color: #ddd;">
+                            <strong>Name (optional)</strong>
+                        </label>
+                        <input type="text" id="name" name="name" 
+                               style="width: 100%; padding: 12px; background-color: #1a1a2e; border: 1px solid #444; border-radius: 5px; color: #fff; font-size: 1em;"
+                               placeholder="Dein Name">
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label for="email" style="display: block; margin-bottom: 5px; color: #ddd;">
+                            <strong>E-Mail (optional, für Rückfragen)</strong>
+                        </label>
+                        <input type="email" id="email" name="email" 
+                               style="width: 100%; padding: 12px; background-color: #1a1a2e; border: 1px solid #444; border-radius: 5px; color: #fff; font-size: 1em;"
+                               placeholder="deine@email.de">
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label for="subject" style="display: block; margin-bottom: 5px; color: #ddd;">
+                            <strong>Betreff</strong>
+                        </label>
+                        <select id="subject" name="subject" 
+                                style="width: 100%; padding: 12px; background-color: #1a1a2e; border: 1px solid #444; border-radius: 5px; color: #fff; font-size: 1em;">
+                            <option value="feedback">Allgemeines Feedback</option>
+                            <option value="bug">Fehler melden</option>
+                            <option value="feature">Vorschlag für neue Funktion</option>
+                            <option value="question">Frage stellen</option>
+                            <option value="other">Sonstiges</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label for="message" style="display: block; margin-bottom: 5px; color: #ddd;">
+                            <strong>Nachricht</strong>
+                        </label>
+                        <textarea id="message" name="message" rows="6" 
+                                  style="width: 100%; padding: 12px; background-color: #1a1a2e; border: 1px solid #444; border-radius: 5px; color: #fff; font-size: 1em; font-family: inherit;"
+                                  placeholder="Schreibe hier dein Feedback..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="padding: 15px 30px; font-size: 1.1em;">
+                        Feedback senden
+                    </button>
+                </form>
+                
+                <p style="margin-top: 20px; color: #888; font-size: 0.9em;">
+                    ⭐ Vielen Dank für dein Feedback! Wir werden uns so schnell wie möglich bei dir melden.
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2>ℹ️ Wichtige Hinweise</h2>
+                <p>
+                    <strong>Datenschutz:</strong> Alle Feedback-Methoden unterliegen unseren 
+                    <a href="hinweise.html#datenschutz" style="color: #4da6ff;">Datenschutzbestimmungen</a>.
+                </p>
+                <p>
+                    <strong>Reaktionszeit:</strong> Wir bemühen uns, auf alle Feedback-Anfragen innerhalb von 3-5 Werktagen zu antworten. 
+                    Bei technischen Problemen kann es etwas länger dauern.
+                </p>
+                <p>
+                    <strong>Spam-Schutz:</strong> Bitte sende kein Spam oder unerwünschte Werbung. Solche Nachrichten werden gelöscht.
+                </p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2026 restoffel</p>
+        </footer>
+    </div>
+    
+    <!-- Standard Navigation Script -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>
