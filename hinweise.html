@@ -90,6 +90,7 @@
             color: #fff;
             transition: all 0.3s;
             margin: 10px 0;
+            font-size: 0.95em;
         }
         
         .github-badge:hover {
@@ -102,6 +103,22 @@
             width: 24px;
             height: 24px;
             fill: currentColor;
+        }
+        
+        .github-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        @media (min-width: 600px) {
+            .github-buttons {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -254,31 +271,31 @@
                     Du kannst den Quellcode einsehen, Vorschläge machen oder Probleme melden.
                 </p>
                 
-                <a href="https://github.com/restoffel/restoffel.github.io" class="github-badge" target="_blank">
-                    <svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-                    </svg>
-                    Repository auf GitHub
-                </a>
+                <div class="github-buttons">
+                    <a href="https://github.com/restoffel/restoffel.github.io" class="github-badge" target="_blank">
+                        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
+                        Repository auf GitHub
+                    </a>
+                    
+                    <a href="https://github.com/restoffel/restoffel.github.io/issues/new" class="github-badge" target="_blank">
+                        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0V7.75zm.75 4.75a.75.75 0 01.75.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75h-.01a.75.75 0 01-.75-.75v-.01zM8 7a.75.75 0 000 1.5h.01a.75.75 0 000-1.5H8z"></path>
+                        </svg>
+                        Feedback geben / Issue erstellen
+                    </a>
+                </div>
                 
                 <p style="margin-top: 20px;">
-                    <strong>Feedback geben oder Fehler melden?</strong>
+                    <strong>Wofür du Issues nutzen kannst:</strong>
                 </p>
-                <p>
-                    Öffne ein Issue im GitHub-Repository, um:
-                </p>
-                <ul style="text-align: left; display: inline-block;">
-                    <li>Vorschläge für neue Funktionen zu machen</li>
-                    <li>Fehler oder Probleme zu melden</li>
-                    <li>Fragen zur Website zu stellen</li>
+                <ul style="text-align: left; display: inline-block; text-align: left;">
+                    <li>Vorschläge für neue Funktionen oder Inhalte</li>
+                    <li>Fehler oder Probleme auf der Website melden</li>
+                    <li>Fragen zur Website oder den Inhalten stellen</li>
+                    <li>Allgemeines Feedback geben</li>
                 </ul>
-                
-                <a href="https://github.com/restoffel/restoffel.github.io/issues" class="github-badge" target="_blank">
-                    <svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0V7.75zm.75 4.75a.75.75 0 01.75.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75h-.01a.75.75 0 01-.75-.75v-.01zM8 7a.75.75 0 000 1.5h.01a.75.75 0 000-1.5H8z"></path>
-                    </svg>
-                    Issue erstellen
-                </a>
                 
                 <p style="margin-top: 20px; font-size: 0.9em; color: #888;">
                     ⭐ Du kannst das Repository auch mit einem Star unterstützen!
