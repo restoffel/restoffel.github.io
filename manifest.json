@@ -1,0 +1,21 @@
+{
+  "name": "restoffel",
+  "short_name": "restoffel",
+  "description": "Willkommen auf meiner Website - Entdecke Kinderlieder, Sternenfotos und mehr!",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#1a1a2e",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "32x32 48x48 64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}
