@@ -7,12 +7,10 @@ class Lightbox {
         this.image = null;
         this.caption = null;
         this.closeBtn = null;
-        this.navPrev = null;
-        this.navNext = null;
         this.zoomInBtn = null;
         this.zoomOutBtn = null;
-        this.panModeBtn = null;
         this.panModeIndicator = null;
+        this.swipeHint = null;
         
         this.currentIndex = 0;
         this.images = [];
@@ -23,6 +21,9 @@ class Lightbox {
         this.translateX = 0;
         this.translateY = 0;
         this.scale = 1;
+        this.touchStartX = 0;
+        this.touchStartY = 0;
+        this.swipeThreshold = 50; // Minimum distance for swipe to register
         
         this.init();
     }
@@ -39,6 +40,9 @@ class Lightbox {
         
         // Add keyboard navigation
         this.addKeyboardNavigation();
+        
+        // Add swipe gestures for mobile
+        this.addSwipeGestures();
     }
     
     createLightbox() {
@@ -69,23 +73,6 @@ class Lightbox {
         this.closeBtn.addEventListener('click', () => this.close());
         this.container.appendChild(this.closeBtn);
         
-        // Create navigation buttons
-        this.navPrev = document.createElement('button');
-        this.navPrev.className = 'lightbox-nav-prev';
-        this.navPrev.innerHTML = '&larr;';
-        this.navPrev.addEventListener('click', () => this.prev());
-        
-        this.navNext = document.createElement('button');
-        this.navNext.className = 'lightbox-nav-next';
-        this.navNext.innerHTML = '&rarr;';
-        this.navNext.addEventListener('click', () => this.next());
-        
-        const nav = document.createElement('div');
-        nav.className = 'lightbox-nav';
-        nav.appendChild(this.navPrev);
-        nav.appendChild(this.navNext);
-        this.container.appendChild(nav);
-        
         // Create zoom controls
         this.zoomInBtn = document.createElement('button');
         this.zoomInBtn.innerHTML = '+ ';
@@ -106,6 +93,12 @@ class Lightbox {
         this.panModeIndicator.className = 'lightbox-pan-mode';
         this.panModeIndicator.textContent = 'Pan Mode';
         this.container.appendChild(this.panModeIndicator);
+        
+        // Create swipe hint
+        this.swipeHint = document.createElement('div');
+        this.swipeHint.className = 'lightbox-swipe-hint';
+        this.swipeHint.textContent = '↔ Wischen zum Wechseln';
+        this.container.appendChild(this.swipeHint);
         
         // Add overlay click to close
         this.overlay.addEventListener('click', (e) => {
@@ -165,12 +158,6 @@ class Lightbox {
                 case 'Escape':
                     this.close();
                     break;
-                case 'ArrowLeft':
-                    this.prev();
-                    break;
-                case 'ArrowRight':
-                    this.next();
-                    break;
                 case '+':
                 case '=':
                     this.zoomIn();
@@ -183,33 +170,54 @@ class Lightbox {
         });
     }
     
-    addTouchEvents() {
+    addSwipeGestures() {
         let touchStartX = 0;
         let touchStartY = 0;
         
         this.image.addEventListener('touchstart', (e) => {
-            if (this.isZoomed) {
-                touchStartX = e.touches[0].clientX;
-                touchStartY = e.touches[0].clientY;
-            }
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
         }, { passive: false });
         
+        this.image.addEventListener('touchend', (e) => {
+            if (!this.isZoomed) {
+                const touchEndX = e.changedTouches[0].clientX;
+                const touchEndY = e.changedTouches[0].clientY;
+                
+                const diffX = touchStartX - touchEndX;
+                const diffY = touchStartY - touchEndY;
+                
+                // Only register as swipe if horizontal movement is greater than vertical
+                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > this.swipeThreshold) {
+                    if (diffX > 0) {
+                        // Swipe left - next image
+                        this.next();
+                    } else {
+                        // Swipe right - previous image
+                        this.prev();
+                    }
+                }
+            }
+        }, { passive: false });
+    }
+    
+    addTouchEvents() {
         this.image.addEventListener('touchmove', (e) => {
             if (this.isZoomed) {
                 e.preventDefault();
                 const touchX = e.touches[0].clientX;
                 const touchY = e.touches[0].clientY;
                 
-                const deltaX = touchX - touchStartX;
-                const deltaY = touchY - touchStartY;
+                const deltaX = touchX - this.touchStartX;
+                const deltaY = touchY - this.touchStartY;
                 
                 this.translateX += deltaX;
                 this.translateY += deltaY;
                 
                 this.image.style.transform = `translate(${this.translateX}px, ${this.translateY}px) scale(${this.scale})`;
                 
-                touchStartX = touchX;
-                touchStartY = touchY;
+                this.touchStartX = touchX;
+                this.touchStartY = touchY;
             }
         }, { passive: false });
     }
@@ -285,9 +293,6 @@ class Lightbox {
         this.image.style.transform = 'none';
         this.panModeIndicator.classList.remove('active');
         
-        // Update navigation buttons
-        this.updateNavigation();
-        
         // Show lightbox
         this.overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -338,9 +343,6 @@ class Lightbox {
             
             // Fade in
             this.image.style.opacity = '1';
-            
-            // Update navigation buttons
-            this.updateNavigation();
         }, 200);
     }
     
@@ -363,11 +365,6 @@ class Lightbox {
             this.image.style.transform = 'none';
             this.panModeIndicator.classList.remove('active');
         }
-    }
-    
-    updateNavigation() {
-        this.navPrev.disabled = this.currentIndex === 0;
-        this.navNext.disabled = this.currentIndex === this.images.length - 1;
     }
 }
 
