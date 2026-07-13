@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sternenfotos | restoffel</title>
+    
+    <!-- Standard Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Seiten-spezifische Styles -->
+    <style>
+        main {
+            padding: 30px 20px;
+        }
+        
+        .intro {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border-left: 4px solid #4da6ff;
+        }
+        
+        .intro p {
+            line-height: 1.8;
+            color: #ddd;
+            margin: 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid rgba(77, 166, 255, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(77, 166, 255, 0.1);
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            background-color: #111;
+        }
+        
+        .gallery-title {
+            font-size: 1.2em;
+            color: #fff;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+        
+        .gallery-meta {
+            font-size: 0.9em;
+            color: #888;
+            margin: 0;
+        }
+        
+        .placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #666;
+            border: 2px dashed #444;
+        }
+        
+        .placeholder-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+            opacity: 0.5;
+        }
+        
+        .info-box {
+            background-color: rgba(77, 166, 255, 0.1);
+            border-left: 4px solid #4da6ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        
+        .info-box h3 {
+            color: #4da6ff;
+            margin-bottom: 15px;
+        }
+        
+        .info-box p {
+            line-height: 1.8;
+            color: #ddd;
+            margin: 0 0 10px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Menü öffnen">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Sidebar Navigation -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h2>restoffel</h2>
+        </div>
+        <ul id="sidebar-nav"></ul>
+    </nav>
+    
+    <!-- Overlay für Mobile -->
+    <div id="overlay"></div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>🌟 Sternenfotos</h1>
+            <p class="subtitle">Astrofotografie - Die Schönheit des Nachthimmels festgehalten</p>
+            <a href="index.html" class="back-link">↩ Zurück zur Startseite</a>
+        </header>
+        
+        <main>
+            <div class="intro">
+                <p>
+                    Hier findest du eine Sammlung von Fotos des Nachthimmels, Sternbildern und astronomischen Phänomenen. 
+                    Die Astrofotografie ist eine faszinierende Möglichkeit, die Wunder des Universums festzuhalten. 
+                </p>
+                <p style="margin-top: 15px;">
+                    Diese Seite wird regelmäßig mit neuen Aufnahmen aktualisiert. Komme bald wieder vorbei! 
+                </p>
+            </div>
+            
+            <div class="info-box">
+                <h3>📷 Bilder hochladen - Wichtige Hinweise</h3>
+                <p>
+                    <strong>EXIF-Metadaten bereinigen:</strong> Bevor du Fotos von deinem Handy oder deiner Kamera hochlädst, 
+                    solltest du die Metadaten (EXIF-Daten) entfernen. Diese enthalten oft sensible Informationen wie:
+                </p>
+                <ul style="text-align: left; margin-left: 20px; padding-left: 20px;">
+                    <li><strong>GPS-Koordinaten</strong> - Zeigt den genauen Aufenthaltsort an (auch wenn du denkst, sie wären nicht drin!)</li>
+                    <li><strong>Kameramodell & Seriennummer</strong> - Kann für Angriffe auf deine Geräte genutzt werden</li>
+                    <li><strong>Datum & Uhrzeit</strong> - Kann mit anderen Daten kombiniert werden, um dein Verhalten zu tracken</li>
+                    <li><strong>Bildbearbeitungs-Informationen</strong> - Zeigt, mit welcher Software das Bild bearbeitet wurde</li>
+                    <li><strong>Orientierung & Ausrichtung</strong> - Kann Hinweise auf den Aufnahmeort geben</li>
+                </ul>
+                <p style="margin-top: 15px;">
+                    <strong>Empfehlung:</strong> Nutze Tools wie <em>ExifTool</em>, <em>Exif Viewer</em> (Browser-Erweiterung) oder 
+                    Online-Dienste wie <a href="https://exif.tools/" target="_blank" style="color: #4da6ff;">exif.tools</a> 
+                    um die Metadaten vor dem Hochladen zu entfernen.
+                </p>
+                <p style="margin-top: 10px;">
+                    <strong>Ausnahme:</strong> Der Zeitstempel kann bleiben, wenn er für die Dokumentation wichtig ist 
+                    (z.B. bei astronomischen Aufnahmen). Aber entferne alle anderen Metadaten!
+                </p>
+            </div>
+            
+            <h2 style="text-align: center; margin: 40px 0 20px 0; color: #4da6ff;">📸 Galerie</h2>
+            
+            <div class="gallery-grid">
+                <!-- Platzhalter für zukünftige Bilder -->
+                <div class="gallery-card">
+                    <div class="placeholder">
+                        <div class="placeholder-icon">🌌</div>
+                        <div>Sternenhimmel-Foto</div>
+                        <div style="font-size: 0.8em; margin-top: 5px;">(Bald verfügbar)</div>
+                    </div>
+                    <h3 class="gallery-title">Sternenhimmel</h3>
+                    <p class="gallery-meta">Noch nicht hochgeladen</p>
+                </div>
+                
+                <div class="gallery-card">
+                    <div class="placeholder">
+                        <div class="placeholder-icon">🔭</div>
+                        <div>Milchstraße</div>
+                        <div style="font-size: 0.8em; margin-top: 5px;">(Bald verfügbar)</div>
+                    </div>
+                    <h3 class="gallery-title">Milchstraße</h3>
+                    <p class="gallery-meta">Noch nicht hochgeladen</p>
+                </div>
+                
+                <div class="gallery-card">
+                    <div class="placeholder">
+                        <div class="placeholder-icon">⭐</div>
+                        <div>Sternbilder</div>
+                        <div style="font-size: 0.8em; margin-top: 5px;">(Bald verfügbar)</div>
+                    </div>
+                    <h3 class="gallery-title">Sternbilder</h3>
+                    <p class="gallery-meta">Noch nicht hochgeladen</p>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2026 restoffel</p>
+        </footer>
+    </div>
+    
+    <!-- Standard Navigation Script -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>

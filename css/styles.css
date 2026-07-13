@@ -1,0 +1,306 @@
+/* ===== STANDARD STYLES FÜR ALLE SEITEN ===== */
+
+/* Reset und Basis-Stile */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0f0f23 100%);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ===== HAMBURGER MENÜ / SIDEBAR ===== */
+
+.hamburger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #4da6ff;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger span:nth-child(1) {
+    transform-origin: 0% 0%;
+}
+
+.hamburger span:nth-child(2) {
+    transform-origin: 0% 100%;
+}
+
+/* Animation für Hamburger Icon */
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    transform: rotate(-45deg);
+}
+
+.hamburger.open span:nth-child(3) {
+    opacity: 0;
+}
+
+/* Sidebar */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    z-index: 1000;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+#sidebar.open {
+    left: 0;
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid #333;
+    text-align: center;
+}
+
+.sidebar-header h2 {
+    color: #4da6ff;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+#sidebar-nav {
+    list-style: none;
+    padding: 20px 0;
+}
+
+#sidebar-nav li {
+    padding: 0;
+    margin: 5px 15px;
+}
+
+#sidebar-nav a {
+    display: block;
+    padding: 12px 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(77, 166, 255, 0.2);
+}
+
+#sidebar-nav a:hover {
+    background-color: #4da6ff;
+    color: #000;
+    transform: translateX(5px);
+}
+
+#sidebar-nav a.active {
+    background-color: #4da6ff;
+    color: #000;
+    font-weight: bold;
+    border-left: 4px solid #fff;
+}
+
+/* Overlay für Mobile */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+#overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Body shift when sidebar is open */
+body.sidebar-open {
+    overflow: hidden;
+}
+
+/* ===== MAIN CONTENT ===== */
+
+.main-content {
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+    min-height: 100vh;
+}
+
+body.sidebar-open .main-content {
+    margin-left: 280px;
+}
+
+/* ===== STANDARD HEADER ===== */
+
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 2px solid #4da6ff;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #4da6ff;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: #aaa;
+    margin-top: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* ===== STANDARD FOOTER ===== */
+
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 0.9em;
+    border-top: 1px solid #333;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #4da6ff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ===== BACK LINK ===== */
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1a1a2e;
+    color: #4da6ff;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #4da6ff;
+    transition: all 0.3s;
+}
+
+.back-link:hover {
+    background-color: #4da6ff;
+    color: #000;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 768px) {
+    .hamburger {
+        top: 15px;
+        left: 15px;
+    }
+    
+    .hamburger span {
+        width: 20px;
+        height: 2px;
+    }
+    
+    #sidebar {
+        width: 250px;
+        left: -250px;
+    }
+    
+    #sidebar.open {
+        left: 0;
+    }
+    
+    body.sidebar-open .main-content {
+        margin-left: 250px;
+    }
+    
+    header h1 {
+        font-size: 1.5em;
+    }
+    
+    .subtitle {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 769px) {
+    /* Desktop: Sidebar immer sichtbar */
+    #sidebar {
+        left: 0;
+    }
+    
+    .main-content {
+        margin-left: 280px;
+    }
+    
+    /* Hamburger Icon ausblenden auf Desktop */
+    .hamburger {
+        display: none;
+    }
+    
+    #overlay {
+        display: none;
+    }
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: 10px; }
+.mt-2 { margin-top: 20px; }
+.mt-3 { margin-top: 30px; }
+.mt-4 { margin-top: 40px; }
+
+.mb-1 { margin-bottom: 10px; }
+.mb-2 { margin-bottom: 20px; }
+.mb-3 { margin-bottom: 30px; }
+.mb-4 { margin-bottom: 40px; }

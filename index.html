@@ -4,24 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>restoffel</title>
+    
+    <!-- Standard Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Seiten-spezifische Styles -->
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-        }
-        
         header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            padding: 40px 20px;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            padding: 40px 20px;
         }
         
         .earth-container {
@@ -69,102 +64,64 @@
             text-decoration: underline;
         }
         
-        /* Navigation */
-        nav {
-            background-color: #0f0f1a;
-            padding: 20px;
-            border-top: 1px solid #333;
-        }
-        
-        nav h2 {
-            margin: 0 0 15px 0;
-            font-size: 1.5em;
-            color: #4da6ff;
-        }
-        
-        .nav-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .nav-list li {
-            margin: 0;
-        }
-        
-        .nav-list a {
-            display: block;
-            padding: 12px 24px;
-            background-color: #1a1a2e;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background-color 0.3s, transform 0.2s;
-            border: 1px solid #333;
-        }
-        
-        .nav-list a:hover {
-            background-color: #4da6ff;
-            transform: translateY(-2px);
-        }
-        
-        .nav-list a:active {
-            transform: translateY(0);
-        }
-        
-        footer {
-            background-color: #0f0f1a;
-            padding: 20px;
-            margin-top: 40px;
-            color: #666;
-            font-size: 0.9em;
+        /* Anpassung für Sidebar */
+        .main-content header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-bottom: none;
         }
         
         @media (max-width: 768px) {
-            .nav-list {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .nav-list a {
-                width: 80%;
-                text-align: center;
+            header {
+                min-height: auto;
+                padding: 60px 20px 40px 20px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="earth-container">
-            <img src="https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                 alt="Schönes Weltraumbild der Erde" 
-                 class="earth-image">
-            
-            <div class="text-content">
-                <h1>Hallo hier ist meine Seite</h1>
-                <div class="signature">— restoffel</div>
-            </div>
-            
-            <div class="image-credit">
-                Schönes Weltraumbild der Erde von <a href="https://unsplash.com/photos/earth-nasa" target="_blank">Unsplash (NASA Collection)</a>
-            </div>
-        </div>
-    </header>
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Menü öffnen">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
     
-    <nav>
-        <h2>Inhaltsverzeichnis</h2>
-        <ul class="nav-list">
-            <li><a href="index.html">Startseite</a></li>
-            <li><a href="kinderlieder.html">Kinderlieder-Videos</a></li>
-        </ul>
+    <!-- Sidebar Navigation -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h2>restoffel</h2>
+        </div>
+        <ul id="sidebar-nav"></ul>
     </nav>
     
-    <footer>
-        <p>© 2026 restoffel</p>
-    </footer>
+    <!-- Overlay für Mobile -->
+    <div id="overlay"></div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <div class="earth-container">
+                <img src="https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="Schönes Weltraumbild der Erde" 
+                     class="earth-image">
+                
+                <div class="text-content">
+                    <h1>Hallo hier ist meine Seite</h1>
+                    <div class="signature">— restoffel</div>
+                </div>
+                
+                <div class="image-credit">
+                    Schönes Weltraumbild der Erde von <a href="https://unsplash.com/photos/earth-nasa" target="_blank">Unsplash (NASA Collection)</a>
+                </div>
+            </div>
+        </header>
+        
+        <footer>
+            <p>© 2026 restoffel</p>
+        </footer>
+    </div>
+    
+    <!-- Standard Navigation Script -->
+    <script src="js/navigation.js"></script>
 </body>
 </html>

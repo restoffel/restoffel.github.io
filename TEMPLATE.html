@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEITENNAME | restoffel</title>
+    
+    <!-- Standard Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Seiten-spezifische Styles hier einfügen -->
+    <style>
+        /* Deine benutzerdefinierten Styles hier */
+        main {
+            padding: 30px 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Menü öffnen">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Sidebar Navigation -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h2>restoffel</h2>
+        </div>
+        <ul id="sidebar-nav"></ul>
+    </nav>
+    
+    <!-- Overlay für Mobile -->
+    <div id="overlay"></div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>🎯 SEITENTITEL</h1>
+            <p class="subtitle">Kurze Beschreibung der Seite</p>
+            <a href="index.html" class="back-link">↩ Zurück zur Startseite</a>
+        </header>
+        
+        <main>
+            <!-- Dein Inhalt hier -->
+            <p>Dein Inhalt kommt hier hin...</p>
+        </main>
+        
+        <footer>
+            <p>© 2026 restoffel</p>
+        </footer>
+    </div>
+    
+    <!-- Standard Navigation Script -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>

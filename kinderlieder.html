@@ -4,59 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kinderlieder-Videos | restoffel</title>
+    
+    <!-- Standard Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Seiten-spezifische Styles -->
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0f0f23 100%);
-            color: #fff;
-            min-height: 100vh;
-        }
-        
-        header {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 30px 20px;
-            text-align: center;
-            border-bottom: 2px solid #4da6ff;
-        }
-        
-        header h1 {
-            margin: 0;
-            font-size: 2em;
-            color: #4da6ff;
-        }
-        
-        .subtitle {
-            font-size: 1.1em;
-            color: #aaa;
-            margin-top: 10px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-        
-        .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #1a1a2e;
-            color: #4da6ff;
-            text-decoration: none;
-            border-radius: 5px;
-            border: 1px solid #4da6ff;
-            transition: all 0.3s;
-        }
-        
-        .back-link:hover {
-            background-color: #4da6ff;
-            color: #000;
-        }
-        
         main {
-            max-width: 1200px;
-            margin: 0 auto;
             padding: 30px 20px;
         }
         
@@ -125,157 +79,154 @@
             margin: 0;
         }
         
-        footer {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            text-align: center;
-            color: #666;
-            font-size: 0.9em;
-            border-top: 1px solid #333;
-            margin-top: 40px;
-        }
-        
-        footer a {
-            color: #4da6ff;
-            text-decoration: none;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
-        
         @media (max-width: 768px) {
             .video-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
-            
-            header h1 {
-                font-size: 1.5em;
-            }
-            
-            .subtitle {
-                font-size: 1em;
-            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>🎵 Kinderlieder-Videos</h1>
-        <p class="subtitle">Eine Sammlung von Kinderliedern zum Mitsingen, Entspannen und Einschlafen</p>
-        <a href="index.html" class="back-link">← Zurück zur Startseite</a>
-    </header>
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Menü öffnen">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
     
-    <main>
-        <div class="intro">
-            <p>
-                Kinderlieder sind etwas Schönes. Sie bringen Freude, fördern die Sprache und machen einfach Spaß. 
-                Es gibt viele gute Seiten mit Kinderliedern im Internet – hier ist eine Auswahl von zehn verschiedenen Liedern, 
-                die Kinder gerne anschauen. Die Videos eignen sich gut zum Mitsingen, Tanzen oder auch zum Runterkommen 
-                und Einschlafen. 
-            </p>
-            <p style="margin-top: 15px;">
-                Egal ob morgens zum Aufwachen oder abends zur Beruhigung – hier findet ihr für verschiedene Anlässe 
-                passende Lieder. Viel Spaß beim Anschauen und Mitsingen! 😊
-            </p>
+    <!-- Sidebar Navigation -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h2>restoffel</h2>
         </div>
+        <ul id="sidebar-nav"></ul>
+    </nav>
+    
+    <!-- Overlay für Mobile -->
+    <div id="overlay"></div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>🎵 Kinderlieder-Videos</h1>
+            <p class="subtitle">Eine Sammlung von Kinderliedern zum Mitsingen, Entspannen und Einschlafen</p>
+            <a href="index.html" class="back-link">↩ Zurück zur Startseite</a>
+        </header>
         
-        <div class="video-grid">
-            <!-- Video 1: Originals-Mix 8 -->
-            <div class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/744G3HEb65w" allowfullscreen></iframe>
-                </div>
-                <h3 class="video-title">Sing Kinderlieder Originals-Mix 8</h3>
-                <p class="video-meta">Nudeln, Zeitreise, Fahrradlied | Caramellino-Mix</p>
+        <main>
+            <div class="intro">
+                <p>
+                    Kinderlieder sind etwas Schönes. Sie bringen Freude, fördern die Sprache und machen einfach Spaß. 
+                    Es gibt viele gute Seiten mit Kinderliedern im Internet – hier ist eine Auswahl von zehn verschiedenen Liedern, 
+                    die Kinder gerne anschauen. Die Videos eignen sich gut zum Mitsingen, Tanzen oder auch zum Runterkommen 
+                    und Einschlafen. 
+                </p>
+                <p style="margin-top: 15px;">
+                    Egal ob morgens zum Aufwachen oder abends zur Beruhigung – hier findet ihr für verschiedene Anlässe 
+                    passende Lieder. Viel Spaß beim Anschauen und Mitsingen! 😊
+                </p>
             </div>
             
-            <!-- Video 2: Lila Luftikus 2 -->
-            <div class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/xwkQP5epO78" allowfullscreen></iframe>
+            <div class="video-grid">
+                <!-- Video 1: Originals-Mix 8 -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/744G3HEb65w" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="video-title">Sing Kinderlieder Originals-Mix 8</h3>
+                    <p class="video-meta">Nudeln, Zeitreise, Fahrradlied | Caramellino-Mix</p>
                 </div>
-                <h3 class="video-title">Sing Kinderlieder Originals-Mix Lila Luftikus 2</h3>
-                <p class="video-meta">Mutausbruch, Bum bum bum, Quatsch-Lied</p>
-            </div>
-            
-            <!-- Video 3: Volkslieder-Mix 2 -->
-            <div class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/eBAgXfEGghE" allowfullscreen></iframe>
+                
+                <!-- Video 2: Lila Luftikus 2 -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/xwkQP5epO78" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="video-title">Sing Kinderlieder Originals-Mix Lila Luftikus 2</h3>
+                    <p class="video-meta">Mutausbruch, Bum bum bum, Quatsch-Lied</p>
                 </div>
-                <h3 class="video-title">Volkslieder-Mix 2</h3>
-                <p class="video-meta">O du lieber Augustin, Spannenlanger Hansel, Widele wedele</p>
-            </div>
-            
-            <!-- Video 4: Originals-Mix 3 -->
-            <div class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/HoLmVq6BLWU" allowfullscreen></iframe>
+                
+                <!-- Video 3: Volkslieder-Mix 2 -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/eBAgXfEGghE" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="video-title">Volkslieder-Mix 2</h3>
+                    <p class="video-meta">O du lieber Augustin, Spannenlanger Hansel, Widele wedele</p>
                 </div>
-                <h3 class="video-title">Sing Kinderlieder Originals-Mix 3</h3>
-                <p class="video-meta">Säbelzahnputztiger, Party im Schneckenhaus | JiMi FLuPP</p>
-            </div>
-            
-            <!-- Video 5: Maxi-Mix 10 -->
-            <div class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/03RZBzdnCVw" allowfullscreen></iframe>
+                
+                <!-- Video 4: Originals-Mix 3 -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/HoLmVq6BLWU" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="video-title">Sing Kinderlieder Originals-Mix 3</h3>
+                    <p class="video-meta">Säbelzahnputztiger, Party im Schneckenhaus | JiMi FLuPP</p>
                 </div>
-                <h3 class="video-title">Sing Kinderlieder Maxi-Mix 10</h3>
-                <p class="video-meta">Das Krokodil-Lied, Die Räder vom Bus, Bingo</p>
-            </div>
-            
-            <!-- Video 6: Volkslieder-Mix 1 -->
-            <div class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/IsxdVa-nVD8" allowfullscreen></iframe>
+                
+                <!-- Video 5: Maxi-Mix 10 -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/03RZBzdnCVw" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="video-title">Sing Kinderlieder Maxi-Mix 10</h3>
+                    <p class="video-meta">Das Krokodil-Lied, Die Räder vom Bus, Bingo</p>
                 </div>
-                <h3 class="video-title">Volkslieder-Mix 1</h3>
-                <p class="video-meta">Hänschen klein, Im Märzen der Bauer, Suse liebe Suse</p>
-            </div>
-            
-            <!-- Video 7: Der Zählefant -->
-            <div class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/eW-pLN-c2v4" allowfullscreen></iframe>
+                
+                <!-- Video 6: Volkslieder-Mix 1 -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/IsxdVa-nVD8" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="video-title">Volkslieder-Mix 1</h3>
+                    <p class="video-meta">Hänschen klein, Im März der Bauer, Suse liebe Suse</p>
                 </div>
-                <h3 class="video-title">Der Zählefant</h3>
-                <p class="video-meta">Lernlieder zum Mitsingen | JiMi FLuPP</p>
-            </div>
-            
-            <!-- Video 8: 60 Minuten Mix Vol 2 -->
-            <div class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/R6KqXS4Ilas" allowfullscreen></iframe>
+                
+                <!-- Video 7: Der Zählefant -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/eW-pLN-c2v4" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="video-title">Der Zählefant</h3>
+                    <p class="video-meta">Lernlieder zum Mitsingen | JiMi FLuPP</p>
                 </div>
-                <h3 class="video-title">KINDERLIEDER-MIX: 60 MINUTEN Vol 2</h3>
-                <p class="video-meta">20 beliebteste Kinderlieder in einem Mix</p>
-            </div>
-            
-            <!-- Video 9: Spannenlanger Hansel -->
-            <div class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/8TssokDtmnc" allowfullscreen></iframe>
+                
+                <!-- Video 8: 60 Minuten Mix Vol 2 -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/R6KqXS4Ilas" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="video-title">KINDERLIEDER-MIX: 60 MINUTEN Vol 2</h3>
+                    <p class="video-meta">20 beliebteste Kinderlieder in einem Mix</p>
                 </div>
-                <h3 class="video-title">Spannenlanger Hansel und vieles mehr</h3>
-                <p class="video-meta">16 Minuten Kinderlieder zum Mitsingen</p>
-            </div>
-            
-            <!-- Video 10: Dornröschen -->
-            <div class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/xyvRaSWBr6E" allowfullscreen></iframe>
+                
+                <!-- Video 9: Spannenlanger Hansel -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/8TssokDtmnc" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="video-title">Spannenlanger Hansel und vieles mehr</h3>
+                    <p class="video-meta">16 Minuten Kinderlieder zum Mitsingen</p>
                 </div>
-                <h3 class="video-title">Dornröschen war ein schönes Kind</h3>
-                <p class="video-meta">Kinderlieder zum Mitsingen | TITOUNIS</p>
+                
+                <!-- Video 10: Dornröschen -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/xyvRaSWBr6E" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="video-title">Dornröschen war ein schönes Kind</h3>
+                    <p class="video-meta">Kinderlieder zum Mitsingen | TITOUNIS</p>
+                </div>
             </div>
-        </div>
-    </main>
+        </main>
+        
+        <footer>
+            <p>© 2026 restoffel</p>
+        </footer>
+    </div>
     
-    <footer>
-        <p>© 2026 restoffel</p>
-    </footer>
+    <!-- Standard Navigation Script -->
+    <script src="js/navigation.js"></script>
 </body>
 </html>
