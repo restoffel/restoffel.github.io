@@ -30,7 +30,7 @@
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin-bottom: 40px;
         }
@@ -69,25 +69,6 @@
             font-size: 0.9em;
             color: #888;
             margin: 0;
-        }
-        
-        .placeholder {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: #666;
-            border: 2px dashed #444;
-        }
-        
-        .placeholder-icon {
-            font-size: 3em;
-            margin-bottom: 10px;
-            opacity: 0.5;
         }
         
         .info-box {
@@ -170,35 +151,18 @@
             <h2 style="text-align: center; margin: 40px 0 20px 0; color: #4da6ff;">📸 Galerie</h2>
             
             <div class="gallery-grid">
-                <!-- Platzhalter für zukünftige Bilder -->
+                <!-- Sternenhimmel -->
                 <div class="gallery-card">
-                    <div class="placeholder">
-                        <div class="placeholder-icon">🌌</div>
-                        <div>Sternenhimmel-Foto</div>
-                        <div style="font-size: 0.8em; margin-top: 5px;">(Bald verfügbar)</div>
-                    </div>
+                    <img src="images/sternenfotos/sternenhimmel-01.jpg" alt="Sternenhimmel mit unzähligen Sternen" class="gallery-image">
                     <h3 class="gallery-title">Sternenhimmel</h3>
-                    <p class="gallery-meta">Noch nicht hochgeladen</p>
+                    <p class="gallery-meta">Eine klare Nacht mit unzähligen Sternen am Himmel</p>
                 </div>
                 
+                <!-- Milchstraße -->
                 <div class="gallery-card">
-                    <div class="placeholder">
-                        <div class="placeholder-icon">🔭</div>
-                        <div>Milchstraße</div>
-                        <div style="font-size: 0.8em; margin-top: 5px;">(Bald verfügbar)</div>
-                    </div>
+                    <img src="images/sternenfotos/milchstrasse-01.jpg" alt="Die Milchstraße über dem Horizont" class="gallery-image">
                     <h3 class="gallery-title">Milchstraße</h3>
-                    <p class="gallery-meta">Noch nicht hochgeladen</p>
-                </div>
-                
-                <div class="gallery-card">
-                    <div class="placeholder">
-                        <div class="placeholder-icon">⭐</div>
-                        <div>Sternbilder</div>
-                        <div style="font-size: 0.8em; margin-top: 5px;">(Bald verfügbar)</div>
-                    </div>
-                    <h3 class="gallery-title">Sternbilder</h3>
-                    <p class="gallery-meta">Noch nicht hochgeladen</p>
+                    <p class="gallery-meta">Unsere Galaxie in voller Pracht</p>
                 </div>
             </div>
         </main>
