@@ -8,11 +8,24 @@
     <!-- Standard Styles -->
     <link rel="stylesheet" href="css/styles.css">
     
+    <!-- Lightbox Styles (für Bildbetrachter) -->
+    <link rel="stylesheet" href="css/lightbox.css">
+    
     <!-- Seiten-spezifische Styles hier einfügen -->
     <style>
         /* Deine benutzerdefinierten Styles hier */
         main {
             padding: 30px 20px;
+        }
+        
+        /* Beispiel für Galerie-Bilder (für Lightbox) */
+        .gallery-image {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-image:hover {
+            transform: scale(1.02);
         }
     </style>
 </head>
@@ -46,6 +59,17 @@
         <main>
             <!-- Dein Inhalt hier -->
             <p>Dein Inhalt kommt hier hin...</p>
+            
+            <!-- Beispiel für Galerie-Bilder mit Lightbox -->
+            <!-- 
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <img src="images/dein-bild.jpg" alt="Beschreibung" class="gallery-image">
+                    <h3 class="gallery-title">Titel</h3>
+                    <p class="gallery-meta">Beschreibung</p>
+                </div>
+            </div>
+            -->
         </main>
         
         <footer>
@@ -55,5 +79,8 @@
     
     <!-- Standard Navigation Script -->
     <script src="js/navigation.js"></script>
+    
+    <!-- Lightbox Script (für Bildbetrachter) -->
+    <script src="js/lightbox.js"></script>
 </body>
 </html>
