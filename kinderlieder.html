@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinderlieder-Videos | restoffel</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0f0f23 100%);
+            color: #fff;
+            min-height: 100vh;
+        }
+        
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 2px solid #4da6ff;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #4da6ff;
+        }
+        
+        .subtitle {
+            font-size: 1.1em;
+            color: #aaa;
+            margin-top: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #1a1a2e;
+            color: #4da6ff;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #4da6ff;
+            transition: all 0.3s;
+        }
+        
+        .back-link:hover {
+            background-color: #4da6ff;
+            color: #000;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        
+        .intro {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border-left: 4px solid #4da6ff;
+        }
+        
+        .intro p {
+            line-height: 1.8;
+            color: #ddd;
+            margin: 0;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .video-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid rgba(77, 166, 255, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(77, 166, 255, 0.1);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-title {
+            font-size: 1.1em;
+            color: #fff;
+            margin: 0 0 8px 0;
+            font-weight: 600;
+        }
+        
+        .video-meta {
+            font-size: 0.9em;
+            color: #888;
+            margin: 0;
+        }
+        
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #333;
+            margin-top: 40px;
+        }
+        
+        footer a {
+            color: #4da6ff;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            header h1 {
+                font-size: 1.5em;
+            }
+            
+            .subtitle {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎵 Kinderlieder-Videos</h1>
+        <p class="subtitle">Eine Sammlung der schönsten Kinderlieder zum Mitsingen, Entspannen und Einschlafen</p>
+        <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+    </header>
+    
+    <main>
+        <div class="intro">
+            <p>
+                Kinderlieder sind etwas Wunderbares! Sie bringen Freude, fördern die Sprache und machen einfach Spaß. 
+                Diese Sammlung enthält die beliebtesten Lieder vom <strong>Sing Kinderlieder</strong> Kanal – perfekt zum Mitsingen, 
+                Tanzen oder auch zum Runterkommen und Einschlafen. Die liebevollen Animationen und eingängigen Melodien 
+                machen diese Videos zu einem idealen Begleiter für Kinder jeden Alters.
+            </p>
+            <p style="margin-top: 15px;">
+                Egal ob morgens zum Aufwachen oder abends zur Beruhigung – hier findet ihr für jeden Anlass das passende Lied. 
+                Viel Spaß beim Anschauen und Mitsingen! 😊
+            </p>
+        </div>
+        
+        <div class="video-grid">
+            <!-- Video 1 - Alligatooor -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                </div>
+                <h3 class="video-title">Alligatooor! - Kinderlieder zum Mitsingen</h3>
+                <p class="video-meta">Fußballlied | JiMi FLuPP | Sing Kinderlieder</p>
+            </div>
+            
+            <!-- Video 2 - Tatü Tata -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/B9FzVJQNl9o" allowfullscreen></iframe>
+                </div>
+                <h3 class="video-title">Tatü Tata (Feuerwehr, Polizei, Krankenwagen)</h3>
+                <p class="video-meta">Milo, das Müllautokind | Sing Kinderlieder</p>
+            </div>
+            
+            <!-- Video 3 - Gefühle Maxi-Mix -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/3lZgYZ1JqKs" allowfullscreen></iframe>
+                </div>
+                <h3 class="video-title">Kinderlieder über Gefühle</h3>
+                <p class="video-meta">Heulschrecke, Alles ist doof | Maxi-Mix</p>
+            </div>
+            
+            <!-- Video 4 - Tierlieder Maxi-Mix -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/5J5XMpX0Q1o" allowfullscreen></iframe>
+                </div>
+                <h3 class="video-title">Die besten Tierlieder</h3>
+                <p class="video-meta">Zählefant, Blaulichtwal, Koalabär | Maxi-Mix</p>
+            </div>
+            
+            <!-- Video 5 - Originals-Mix 8 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/744G3HEb65w" allowfullscreen></iframe>
+                </div>
+                <h3 class="video-title">Sing Kinderlieder Originals-Mix 8</h3>
+                <p class="video-meta">Nudeln, Zeitreise, Fahrradlied | Caramellino</p>
+            </div>
+            
+            <!-- Video 6 - Ich bin Bauer -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/2X0g7HQ2z0M" allowfullscreen></iframe>
+                </div>
+                <h3 class="video-title">Ich bin Bauer und ich lieb es!</h3>
+                <p class="video-meta">Bauernhoflieder | Timmy Traktor & Freunde</p>
+            </div>
+            
+            <!-- Video 7 - Endlich Ferien -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/34IgA5lwW5w" allowfullscreen></iframe>
+                </div>
+                <h3 class="video-title">Endlich Ferien!</h3>
+                <p class="video-meta">Bauernhoflieder | Timmy Traktor | EMMALU</p>
+            </div>
+            
+            <!-- Video 8 - Der schnellste Traktor -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/6U7d71j5p0A" allowfullscreen></iframe>
+                </div>
+                <h3 class="video-title">Der schnellste Traktor der Welt</h3>
+                <p class="video-meta">Bauernhoflied | Timmy Traktor</p>
+            </div>
+            
+            <!-- Video 9 - Wir bauen eine Rakete -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/8N4qYx7O3q0" allowfullscreen></iframe>
+                </div>
+                <h3 class="video-title">Wir bauen eine Rakete</h3>
+                <p class="video-meta">Kalle Klang & Die Flohtöne</p>
+            </div>
+            
+            <!-- Video 10 - Alle Tiere tanzen -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/9N5l6VJzGJE" allowfullscreen></iframe>
+                </div>
+                <h3 class="video-title">Alle Tiere tanzen</h3>
+                <p class="video-meta">Bauernhoflied für Kinder | Hey Jannik</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>Videos von <a href="https://www.youtube.com/@SingKinderlieder" target="_blank">Sing Kinderlieder</a> | © 2026 restoffel</p>
+    </footer>
+</body>
+</html>
