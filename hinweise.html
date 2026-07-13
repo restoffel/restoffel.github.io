@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hinweise | restoffel</title>
+    
+    <!-- Standard Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Seiten-spezifische Styles -->
+    <style>
+        main {
+            padding: 30px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 4px solid #4da6ff;
+        }
+        
+        .section h2 {
+            color: #4da6ff;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+        
+        .section h3 {
+            color: #fff;
+            margin: 25px 0 15px 0;
+            font-size: 1.2em;
+        }
+        
+        .section p {
+            line-height: 1.8;
+            color: #ddd;
+            margin: 0 0 15px 0;
+        }
+        
+        .section ul {
+            margin-left: 20px;
+            padding-left: 20px;
+        }
+        
+        .section li {
+            line-height: 1.8;
+            color: #ddd;
+            margin-bottom: 8px;
+        }
+        
+        .section a {
+            color: #4da6ff;
+            text-decoration: none;
+        }
+        
+        .section a:hover {
+            text-decoration: underline;
+        }
+        
+        .highlight {
+            background-color: rgba(77, 166, 255, 0.2);
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Menü öffnen">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Sidebar Navigation -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h2>restoffel</h2>
+        </div>
+        <ul id="sidebar-nav"></ul>
+    </nav>
+    
+    <!-- Overlay für Mobile -->
+    <div id="overlay"></div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>ℹ️ Hinweise</h1>
+            <p class="subtitle">Rechtliche Hinweise, Haftungsausschluss und Datenschutz</p>
+            <a href="index.html" class="back-link">↩ Zurück zur Startseite</a>
+        </header>
+        
+        <main>
+            <div class="section">
+                <h2>Impressum</h2>
+                <p>
+                    Diese Website wird privat betrieben von:
+                </p>
+                <p>
+                    <strong>restoffel</strong><br>
+                    E-Mail: (auf Anfrage)
+                </p>
+                <p>
+                    Diese Website dient ausschließlich privaten, nicht-kommerziellen Zwecken.
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2>Haftungsausschluss (Disclaimer)</h2>
+                
+                <h3>Haftung für eigene Inhalte</h3>
+                <p>
+                    Wir sind für die eigenen Inhalte, die wir zur Nutzung bereithalten, nach den allgemeinen Gesetzen verantwortlich. 
+                    Eine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Informationen können wir 
+                    jedoch nicht übernehmen. Eine Haftung für Schäden, die durch die Nutzung dieser Website oder der darauf 
+                    enthaltenen Informationen entstehen, ist ausgeschlossen, sofern kein vorsätzliches oder grob fahrlässiges 
+                    Verschulden unsererseits vorliegt.
+                </p>
+                
+                <h3>Haftung für Inhalte externer Links</h3>
+                <p>
+                    Unsere Website enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. 
+                    Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. 
+                    Wir machen uns diese Inhalte nicht zu eigen und überprüfen die verlinkten Seiten nicht auf rechtwidrige Inhalte. 
+                    Eine dauerhafte inhaltliche Kontrolle der verlinkten Seiten ist ohne konkrete Anhaltspunkte einer Rechtsverletzung 
+                    nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+                </p>
+                
+                <h3>Urheberrecht</h3>
+                <p>
+                    Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. 
+                    Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes 
+                    bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind 
+                    nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+                </p>
+                <p>
+                    Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. 
+                    Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung 
+                    aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir 
+                    derartige Inhalte umgehend entfernen.
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2>Datenschutz</h2>
+                
+                <h3>Allgemeine Hinweise</h3>
+                <p>
+                    Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. 
+                    Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) 
+                    erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis.
+                </p>
+                <p>
+                    Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.
+                </p>
+                
+                <h3>Server-Log-Files</h3>
+                <p>
+                    Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Files, 
+                    die Ihr Browser automatisch an uns übermittelt. Dies sind:
+                </p>
+                <ul>
+                    <li>Browsertyp und Browserversion</li>
+                    <li>verwendetes Betriebssystem</li>
+                    <li>Referrer URL</li>
+                    <li>Hostname des zugreifenden Rechners</li>
+                    <li>Uhrzeit der Serveranfrage</li>
+                    <li>IP-Adresse</li>
+                </ul>
+                <p>
+                    Diese Daten sind nicht bestimmten Personen zuordenbar. Eine Zusammenführung dieser Daten mit anderen 
+                    Datenquellen wird nicht vorgenommen. Wir behalten uns vor, diese Daten nachträglich zu prüfen, wenn uns 
+                    konkrete Anhaltspunkte für eine rechtswidrige Nutzung bekannt werden.
+                </p>
+                
+                <h3>Externe Links (z.B. YouTube)</h3>
+                <p>
+                    Unsere Website kann Inhalte von externen Anbietern einbinden (z.B. YouTube-Videos). 
+                    Diese Anbieter können Cookies setzen und Daten erheben. Wir haben keinen Einfluss auf die Datenverarbeitung 
+                    durch diese Anbieter. Bitte beachten Sie die Datenschutzerklärungen der jeweiligen Anbieter.
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2>Nutzungsbedingungen für Bilder</h2>
+                <p>
+                    Alle auf dieser Website veröffentlichten Bilder und Inhalte unterliegen dem Urheberrecht von <strong>restoffel</strong>.
+                </p>
+                <p>
+                    Die Bilder dürfen:
+                </p>
+                <ul>
+                    <li>für den <strong>privaten Gebrauch</strong> heruntergeladen und geteilt werden</li>
+                    <li>in <strong>nicht-kommerziellen Kontexten</strong> verwendet werden (z.B. private Blogs, soziale Medien)</li>
+                </ul>
+                <p>
+                    Bei jeder Weiterverwendung ist die Quelle deutlich anzugeben:
+                </p>
+                <p style="text-align: center;">
+                    <span class="highlight">Quelle: restoffel.github.io</span>
+                </p>
+                <p>
+                    Eine <strong>kommerzielle Nutzung</strong> oder Veränderung der Bilder ist ohne ausdrückliche schriftliche 
+                    Genehmigung nicht gestattet.
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2>Kontakt</h2>
+                <p>
+                    Bei Fragen zu diesen Hinweisen oder unserer Website können Sie uns gerne kontaktieren.
+                </p>
+                <p>
+                    Bitte beachten Sie, dass wir keine rechtliche Beratung anbieten können. 
+                    Für rechtssichere Auskünfte wenden Sie sich bitte an einen Anwalt.
+                </p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2026 restoffel</p>
+        </footer>
+    </div>
+    
+    <!-- Standard Navigation Script -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>

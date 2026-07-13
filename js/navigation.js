@@ -4,7 +4,8 @@
 const pages = [
     { name: "Startseite", url: "index.html" },
     { name: "Kinderlieder-Videos", url: "kinderlieder.html" },
-    { name: "Sternenfotos", url: "sternenfotos.html" }
+    { name: "Sternenfotos", url: "sternenfotos.html" },
+    { name: "Hinweise", url: "hinweise.html" }
 ];
 
 // Aktuelle Seite ermitteln
