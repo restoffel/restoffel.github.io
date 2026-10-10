@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumente | restoffel</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Dokumente | restoffel">
+    <meta property="og:description" content="Zugang zu Dokumenten und PDF-Dateien auf restoffel.github.io">
+    <meta property="og:url" content="https://restoffel.github.io/dokumente.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dokumente | restoffel">
+    <meta name="twitter:description" content="Zugang zu Dokumenten und PDF-Dateien auf restoffel.github.io">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a1a2e">
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="favicon.svg">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Standard Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Seiten-spezifische Styles -->
+    <style>
+        main {
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .documents-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .document-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(77, 166, 255, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .document-card:hover {
+            transform: translateY(-5px);
+            border-color: #4da6ff;
+            box-shadow: 0 10px 30px rgba(77, 166, 255, 0.2);
+        }
+        
+        .document-icon {
+            font-size: 3em;
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+        
+        .document-title {
+            font-size: 1.3em;
+            color: #4da6ff;
+            margin-bottom: 10px;
+        }
+        
+        .document-description {
+            color: #aaa;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .document-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: #4da6ff;
+            color: #000;
+        }
+        
+        .btn-primary:hover {
+            background-color: #3a8bc8;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #4da6ff;
+            border: 1px solid #4da6ff;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(77, 166, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .pdf-viewer-container {
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(77, 166, 255, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .pdf-viewer {
+            width: 100%;
+            height: 600px;
+            min-height: 500px;
+            border: none;
+            border-radius: 8px;
+            background: #fff;
+        }
+        
+        .pdf-info {
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9em;
+            margin-top: 15px;
+        }
+        
+        .pdf-info a {
+            color: #4da6ff;
+            text-decoration: none;
+        }
+        
+        .pdf-info a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .documents-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pdf-viewer {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Menü öffnen">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Sidebar Navigation -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h2>restoffel</h2>
+        </div>
+        <ul id="sidebar-nav"></ul>
+    </nav>
+    
+    <!-- Overlay für Mobile -->
+    <div id="overlay"></div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>📄 Dokumente</h1>
+            <p class="subtitle">Hier finden Sie verschiedene Dokumente und PDF-Dateien zum Anzeigen und Herunterladen</p>
+            <a href="index.html" class="back-link">↩ Zurück zur Startseite</a>
+        </header>
+        
+        <main>
+            <div class="documents-header">
+                <p>Wählen Sie ein Dokument aus der Liste unten aus oder verwenden Sie den PDF-Viewer für direktes Anschauen.</p>
+            </div>
+            
+            <div class="documents-grid">
+                <div class="document-card">
+                    <div class="document-icon">📄</div>
+                    <h3 class="document-title">Die Flut der Beweise</h3>
+                    <p class="document-description">Eine umfassende Sammlung von Beweisen und Dokumenten zu verschiedenen Themen.</p>
+                    <div class="document-actions">
+                        <a href="documents/DieFlutderBeweise.pdf" class="btn btn-primary" target="_blank">PDF öffnen</a>
+                        <a href="documents/DieFlutderBeweise.pdf" class="btn btn-secondary" download>Herunterladen</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pdf-viewer-container">
+                <h3 style="text-align: center; color: #4da6ff; margin-bottom: 15px;">PDF-Viewer - Direkte Vorschau</h3>
+                <iframe class="pdf-viewer" src="documents/DieFlutderBeweise.pdf" title="Die Flut der Beweise - PDF-Viewer"></iframe>
+                <p class="pdf-info">
+                    <strong>Tipp:</strong> Falls der PDF-Viewer nicht angezeigt wird, können Sie die Datei auch 
+                    <a href="documents/DieFlutderBeweise.pdf" target="_blank">hier direkt öffnen</a> oder 
+                    <a href="documents/DieFlutderBeweise.pdf" download>herunterladen</a>.
+                </p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2026 restoffel</p>
+        </footer>
+    </div>
+    
+    <!-- Standard Navigation Script -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>

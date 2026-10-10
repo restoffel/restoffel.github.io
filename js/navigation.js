@@ -5,6 +5,7 @@ const pages = [
     { name: "Startseite", url: "index.html" },
     { name: "Kinderlieder-Videos", url: "kinderlieder.html" },
     { name: "Sternenfotos", url: "sternenfotos.html" },
+    { name: "Dokumente", url: "dokumente.html" },
     { name: "Feedback", url: "feedback.html" },
     { name: "Hinweise", url: "hinweise.html" }
 ];
